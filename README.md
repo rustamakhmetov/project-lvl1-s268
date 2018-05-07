@@ -4,12 +4,12 @@
 
 [![Build Status](https://travis-ci.org/rustamakhmetov/project-lvl1-s268.svg?branch=master)](https://travis-ci.org/rustamakhmetov/project-lvl1-s268)
 
-##Проект Brain Games - набор мини-игр запускаемых из консоли
+## Проект Brain Games - набор мини-игр запускаемых из консоли
 
 Установка: npm install -g ra_brains_games
 
 Запуск: brain_games
 
-###Игра: "Проверка на четность"
+### Игра: "Проверка на четность"
 
 Запуск: brain_even
