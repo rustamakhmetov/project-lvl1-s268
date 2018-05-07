@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import info, { welcome, getUsername } from '../utils';
+import welcome, { getUsername } from '../utils';
 
 const getRandomInt = (min, max) => Math.floor((Math.random() * (max - (min + 1))) + min);
 
@@ -16,18 +16,18 @@ const isCorrectAnswer = (answer, value) => {
 export default () => {
   welcome('Answer "yes" if number even otherwise answer "no".');
   const name = getUsername();
-  info(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`);
   for (let i = 0; i < 3; i += 1) {
     const value = getRandomInt(1, 100);
-    info(`Question: ${value}`);
+    console.log(`Question: ${value}`);
     const answer = readlineSync.question('Your answer: ').trim();
     if (!isCorrectAnswer(answer, value)) {
-      info('\'yes\' is wrong answer ;(. Correct answer was \'no\'.');
-      info(`Let's try again, ${name}!`);
+      console.log('\'yes\' is wrong answer ;(. Correct answer was \'no\'.');
+      console.log(`Let's try again, ${name}!`);
       return false;
     }
-    info('Correct!');
+    console.log('Correct!');
   }
-  info(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
   return true;
 };

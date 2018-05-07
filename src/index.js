@@ -1,9 +1,9 @@
-import info, { welcome, getUsername } from './utils';
+import welcome, { getUsername } from './utils';
 
 const start = () => {
   welcome();
   const name = getUsername();
-  info(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`);
 };
 
 export default start;
