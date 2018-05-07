@@ -2,6 +2,14 @@
   "name": "ra_brain_games",
   "version": "1.0.3",
   "description": "Mini-games launched from the console",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
@@ -11,6 +19,9 @@
   },
   "author": "Rustam Akhmetov",
   "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
@@ -21,16 +32,5 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.11.0"
-  },
-  "bin": {
-    "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js"
-  },
-  "files": [
-    "dist"
-  ],
-  "dependencies": {
-    "readline-sync": "^1.4.9"
   }
 }
