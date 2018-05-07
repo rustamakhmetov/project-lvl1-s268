@@ -1,8 +1,7 @@
 {
   "name": "ra_brain_games",
   "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Mini-games launched from the console",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
@@ -10,7 +9,7 @@
     "prepublishOnly": "npm run build",
     "eslint": "eslint"
   },
-  "author": "",
+  "author": "Rustam Akhmetov",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "*",
