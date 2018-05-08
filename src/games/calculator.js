@@ -1,6 +1,6 @@
-import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 import getRandomInt from '../utils';
+import { getAnswerForQuestion, main } from '../index';
 
 const add = (a, b) => a + b;
 
@@ -39,10 +39,11 @@ const toString = exp => `${value1(exp)} ${toStringOperation(exp)} ${value2(exp)}
 
 const calc = exp => operationFunc(exp)(value1(exp), value2(exp));
 
-export default () => {
+export const run = () => {
   const exp = makeExpression();
-  console.log(`Question: ${toString(exp)}`);
-  const answer = Number(readlineSync.question('Your answer: '));
+  const answer = Number(getAnswerForQuestion(toString(exp)));
   const expected = calc(exp);
   return cons(answer, expected);
 };
+
+export default () => main(run, 'What is the result of the expression?');

@@ -1,6 +1,6 @@
-import readlineSync from 'readline-sync';
 import { cons } from 'hexlet-pairs';
 import getRandomInt from '../utils';
+import { getAnswerForQuestion, main } from '../index';
 
 const getEvenInt = num => num % 2 === 0;
 
@@ -9,10 +9,11 @@ const getCorrectAnswer = (value) => {
   return isEven ? 'yes' : 'no';
 };
 
-export default () => {
+export const run = () => {
   const question = getRandomInt(1, 100);
-  console.log(`Question: ${question}`);
-  const answer = readlineSync.question('Your answer: ').trim();
+  const answer = getAnswerForQuestion(question);
   const expected = getCorrectAnswer(question);
   return cons(answer, expected);
 };
+
+export default () => main(run, 'Answer "yes" if number even otherwise answer "no".');
