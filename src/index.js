@@ -8,7 +8,8 @@ export const main = (game, rules) => {
   console.log(rules);
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
-  for (let step = 0; step < 3; step += 1) {
+  const countSteps = 3;
+  for (let step = 0; step < countSteps; step += 1) {
     const result = game();
     const answer = car(result);
     const expected = cdr(result);
