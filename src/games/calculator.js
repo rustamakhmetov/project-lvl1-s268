@@ -39,29 +39,10 @@ const toString = exp => `${value1(exp)} ${toStringOperation(exp)} ${value2(exp)}
 
 const calc = exp => operationFunc(exp)(value1(exp), value2(exp));
 
-export default (_name) => {
-  let name;
-  if (_name === undefined) {
-    console.log('Welcome to the Brain Games!');
-  } else {
-    name = _name;
-  }
-  console.log('What is the result of the expression?');
-  if (name === undefined) {
-    name = readlineSync.question('May I have your name?: ');
-    console.log(`Hello, ${name}!`);
-  }
-  for (let i = 0; i < 3; i += 1) {
-    const exp = makeExpression();
-    console.log(`Question: ${toString(exp)}`);
-    const answer = Number(readlineSync.question('Your answer: '));
-    const expected = calc(exp);
-    if (expected !== answer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expected}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-    console.log('Correct!');
-  }
-  console.log(`Congratulations, ${name}!`);
+export default () => {
+  const exp = makeExpression();
+  console.log(`Question: ${toString(exp)}`);
+  const answer = Number(readlineSync.question('Your answer: '));
+  const expected = calc(exp);
+  return cons(answer, expected);
 };

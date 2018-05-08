@@ -1,6 +1,6 @@
 {
   "name": "ra_brain_games",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Mini-games launched from the console",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",

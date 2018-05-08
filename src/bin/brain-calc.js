@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
 import start from '../games/calculator';
+import { main } from '../index';
 
-start();
+main(start, 'What is the result of the expression?');

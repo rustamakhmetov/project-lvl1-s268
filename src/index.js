@@ -1,8 +1,28 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 import even from './games/even';
 import calc from './games/calculator';
 
-export default () => {
+export const main = (game, rules) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(rules);
+  const name = readlineSync.question('May I have your name?: ');
+  console.log(`Hello, ${name}!`);
+  for (let step = 0; step < 3; step += 1) {
+    const result = game();
+    const answer = car(result);
+    const expected = cdr(result);
+    if (expected !== answer) {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expected}'.`);
+      console.log(`Let's try again, ${name}!`);
+      return;
+    }
+    console.log('Correct!');
+  }
+  console.log(`Congratulations, ${name}!`);
+};
+
+export default () => { // TODO: main menu
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
