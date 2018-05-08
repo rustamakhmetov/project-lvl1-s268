@@ -1,6 +1,6 @@
 {
   "name": "ra_brain_games",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Mini-games launched from the console",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -20,6 +20,7 @@
   "author": "Rustam Akhmetov",
   "license": "ISC",
   "dependencies": {
+    "hexlet-pairs": "^1.0.7",
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
