@@ -4,14 +4,17 @@ import { main } from '..';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
-const nod = (a, b) => {
-  const maxDivisor = Math.floor(Math.min(a, b) / 2);
-  for (let i = maxDivisor; i > 1; i -= 1) {
-    if (a % i === 0 && b % i === 0) {
-      return i;
+const nod = (_a, _b) => {
+  let a = _a;
+  let b = _b;
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
     }
   }
-  return null;
+  return a + b;
 };
 
 const makeQuestion = () => {
@@ -19,7 +22,7 @@ const makeQuestion = () => {
     const value1 = getRandomInt(1, 100);
     const value2 = getRandomInt(1, 100);
     const answer = nod(value1, value2);
-    if (answer !== null) {
+    if (answer !== 0) {
       const question = `${value1} ${value2} [${answer}]`;
       return cons(String(answer), question);
     }
