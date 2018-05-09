@@ -8,7 +8,7 @@ const getAnswerForQuestion = (question) => {
   return readlineSync.question('Your answer: ').trim();
 };
 
-export const main = (game, rules) => {
+export default (game, rules) => {
   console.log('Welcome to the Brain Games!');
   console.log(rules);
   const name = readlineSync.question('May I have your name?: ');
@@ -27,5 +27,3 @@ export const main = (game, rules) => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-
-export default () => console.log('Welcome to the Brain Games!');

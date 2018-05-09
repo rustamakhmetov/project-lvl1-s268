@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import getRandomInt from '../utils';
-import { main } from '..';
+import main from '..';
 
 const rule = 'Answer "yes" if number even otherwise answer "no".';
 
