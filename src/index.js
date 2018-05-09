@@ -3,7 +3,7 @@ import { car, cdr } from 'hexlet-pairs';
 
 const countSteps = 3;
 
-export const getAnswerForQuestion = (question) => {
+const getAnswerForQuestion = (question) => {
   console.log(`Question: ${question}`);
   return readlineSync.question('Your answer: ').trim();
 };
@@ -15,7 +15,7 @@ export const main = (game, rules) => {
   console.log(`Hello, ${name}!`);
   for (let step = 0; step < countSteps; step += 1) {
     const gameData = game();
-    const answer = String(car(gameData));
+    const answer = car(gameData);
     const question = cdr(gameData);
     const userAnswer = getAnswerForQuestion(question);
     if (userAnswer !== answer) {
