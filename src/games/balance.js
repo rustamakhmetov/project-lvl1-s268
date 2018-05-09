@@ -1,23 +1,31 @@
 import { cons } from 'hexlet-pairs';
 import getRandomInt from '../utils';
-import { main } from '../index';
+import main from '..';
 
 const rule = 'Balance the given number.';
 
-const getBalance = (value) => {
-  const maxDivisor = Math.floor(Math.min(a, b) / 2);
-  for (let i = maxDivisor; i > 1; i -= 1) {
-    if (a % i === 0 && b % i === 0) {
-      return i;
+const getSumNumbers = number => String(number).split('').reduce((a, b) => Number(a) + Number(b), 0);
+
+const getBalance = (number) => {
+  const countNumbers = String(number).length;
+
+  const sumNumbers = getSumNumbers(number);
+
+  const balance = (sum, count, result) => {
+    if (count === 0) {
+      return result;
     }
-  }
-  return null;
+    const newNumber = Math.floor(sum / count);
+    return balance(sum - newNumber, count - 1, result + String(newNumber));
+  };
+
+  return balance(sumNumbers, countNumbers, '');
 };
 
 const makeQuestion = () => {
-  const question = getRandomInt(1, 100);
+  const question = getRandomInt(1, 9999);
   const answer = getBalance(question);
-  return cons(answer, question);
+  return cons(answer, `${question} [${answer}]`);
 };
 
 export default () => main(makeQuestion, rule);
