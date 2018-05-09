@@ -14,11 +14,12 @@ export const main = (game, rules) => {
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name}!`);
   for (let step = 0; step < countSteps; step += 1) {
-    const result = game();
-    const answer = car(result);
-    const expected = cdr(result);
-    if (expected !== answer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${expected}'.`);
+    const gameData = game();
+    const answer = String(car(gameData));
+    const question = cdr(gameData);
+    const userAnswer = getAnswerForQuestion(question);
+    if (userAnswer !== answer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }

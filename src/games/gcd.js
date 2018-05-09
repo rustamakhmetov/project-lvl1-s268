@@ -1,6 +1,8 @@
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 import getRandomInt from '../utils';
-import { getAnswerForQuestion, main } from '../index';
+import { main } from '../index';
+
+const RULES = 'Find the greatest common divisor of given numbers.';
 
 const nod = (a, b) => {
   const maxDivisor = Math.floor(Math.min(a, b) / 2);
@@ -23,14 +25,4 @@ const makeQuestion = () => {
   }
 };
 
-const questionText = question => cdr(question);
-
-const expected = question => car(question);
-
-export const run = () => {
-  const question = makeQuestion();
-  const answer = Number(getAnswerForQuestion(questionText(question)));
-  return cons(answer, expected(question));
-};
-
-export default () => main(run, 'Find the greatest common divisor of given numbers.');
+export default () => main(makeQuestion, RULES);

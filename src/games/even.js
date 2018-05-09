@@ -1,19 +1,18 @@
 import { cons } from 'hexlet-pairs';
 import getRandomInt from '../utils';
-import { getAnswerForQuestion, main } from '../index';
+import { main } from '../index';
 
-const getEvenInt = num => num % 2 === 0;
+const RULES = 'Answer "yes" if number even otherwise answer "no".';
 
 const getCorrectAnswer = (value) => {
-  const isEven = getEvenInt(value);
+  const isEven = value % 2 === 0;
   return isEven ? 'yes' : 'no';
 };
 
-export const run = () => {
+export const makeQuestion = () => {
   const question = getRandomInt(1, 100);
-  const answer = getAnswerForQuestion(question);
-  const expected = getCorrectAnswer(question);
-  return cons(answer, expected);
+  const answer = getCorrectAnswer(question);
+  return cons(answer, question);
 };
 
-export default () => main(run, 'Answer "yes" if number even otherwise answer "no".');
+export default () => main(makeQuestion, RULES);
