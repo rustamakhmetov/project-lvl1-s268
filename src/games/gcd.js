@@ -18,15 +18,11 @@ const nod = (_a, _b) => {
 };
 
 const makeQuestion = () => {
-  for (;;) {
-    const value1 = getRandomInt(1, 100);
-    const value2 = getRandomInt(1, 100);
-    const answer = nod(value1, value2);
-    if (answer !== 0) {
-      const question = `${value1} ${value2} [${answer}]`;
-      return cons(String(answer), question);
-    }
-  }
+  const value1 = getRandomInt(1, 100);
+  const value2 = getRandomInt(1, 100);
+  const answer = nod(value1, value2);
+  const question = `${value1} ${value2} [${answer}]`;
+  return cons(String(answer), question);
 };
 
 export default () => main(makeQuestion, rule);
