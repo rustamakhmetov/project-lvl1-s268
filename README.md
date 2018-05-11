@@ -33,6 +33,11 @@ brain-gcd
 brain-balance
 ```
 
+5. Простое число
+```
+brain-prime
+```
+
 Используются:
 * [Babel](https://babeljs.io/)
 * [Eslint](https://eslint.org/)
