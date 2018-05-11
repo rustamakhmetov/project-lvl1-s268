@@ -33,6 +33,11 @@ brain-gcd
 brain-balance
 ```
 
+5. Арифметическая прогрессия
+```
+brain-progression
+```
+
 Используются:
 * [Babel](https://babeljs.io/)
 * [Eslint](https://eslint.org/)
