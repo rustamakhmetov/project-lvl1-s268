@@ -38,6 +38,11 @@ brain-balance
 brain-progression
 ```
 
+5. Простое число
+```
+brain-prime
+```
+
 Используются:
 * [Babel](https://babeljs.io/)
 * [Eslint](https://eslint.org/)
