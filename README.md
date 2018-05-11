@@ -33,6 +33,11 @@ brain-gcd
 brain-balance
 ```
 
+5. Арифметическая прогрессия
+```
+brain-progression
+```
+
 5. Простое число
 ```
 brain-prime
