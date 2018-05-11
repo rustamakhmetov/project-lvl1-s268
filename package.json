@@ -1,6 +1,6 @@
 {
   "name": "ra_brain_games",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Mini-games launched from the console",
   "bin": {
     "brain-even": "dist/bin/brain-even.js",
